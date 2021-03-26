@@ -62,10 +62,9 @@ def text(message):
                          parse_mode='html')
 
     elif message.text == '📞 Контакти':
-        bot.send_message(message.chat.id, '+380673731324 <i>Юрій Васильович</i>', parse_mode='html')
+        bot.send_message(message.chat.id, '+380673731324 Юрій Васильович', parse_mode='html')
 
-        bot.send_photo(message.chat.id,
-                       'https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fathletic-club-80.business.site%2F&psig=AOvVaw3trjxi0TWs5TWEnfAkobqf&ust=1616840064942000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMCd1uHcze8CFQAAAAAdAAAAABAD',
+        bot.send_photo(message.chat.id, open(r'C:\Users\Killcrop123\PycharmProjects\SpartaGymBot\Photos\location.jpg', 'rb').read(),
                        caption='<i>м.Львів, вул. Кирила Трильовського 16</i>', parse_mode='html')
     else:
         bot.send_message(message.chat.id, 'Поки я не знаю що на це відповісти :(\n'
@@ -102,8 +101,8 @@ def callback_inline(call):
                                       reply_markup=None, parse_mode='html')
 
             elif call.data == 'normal':
-                bot.send_message(call.message.chat.id, 'Зал працює згідно графіку\n'
-                                                       'Не забувайте прибирати за собою інвентар 😉\n\n'
+                bot.send_message(call.message.chat.id, 'Зал працює згідно з графіком\n'
+                                                       'Також не забувайте прибирати за собою інвентар :)\n\n'
                                                        'До зустрічі на тренуванні 💪')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Просимо звернути увагу❗️</b>\n"
